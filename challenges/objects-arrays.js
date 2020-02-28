@@ -18,7 +18,7 @@ const dinoOne = {
   weight: '7000kg',
   length: '12m',
   period: 'Late Cretaceous',
-  roar: function () {
+  roar: () => {
     return "RAWERSRARARWERSARARARRRR!"
   }
 }
