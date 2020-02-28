@@ -131,7 +131,7 @@ const universities = [];
 for (let i = 0; i < graduates.length; i++) {
   universities.push(graduates[i].university);
 }
-universities.sort(function (a, b) {
+universities.sort((a, b) => {
   let compare = 0;
   if (a > b) {
     compare = 1;
@@ -236,10 +236,10 @@ The zoos want to display both the scientific name and the animal name in front o
 
 */
 const displayNames = [];
-zooAnimals.forEach(function (items) {
+zooAnimals.forEach(items => {
   return displayNames.push(`Name: ${items.animal_name}, Scientific: ${items.scientific_name}.`);
+  console.log(displayNames);
 });
-console.log(displayNames);
 
 /* Request 2: .map()
 
@@ -248,7 +248,7 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 */
 
 // const lowCaseAnimalNames = [];
-const lowCaseAnimalNames = zooAnimals.map(function (items) {
+const lowCaseAnimalNames = zooAnimals.map(items => {
   return items.animal_name.toLowerCase();
 });
 console.log(lowCaseAnimalNames);
@@ -258,7 +258,7 @@ console.log(lowCaseAnimalNames);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals = zooAnimals.filter(function (items) {
+const lowPopulationAnimals = zooAnimals.filter(items => {
   return items.population < 5;
 });
 console.log(lowPopulationAnimals);
@@ -268,14 +268,12 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-const populationTotal = zooAnimals.reduce(function (acc, cur) {
+const populationTotal = zooAnimals.reduce((acc, cur) => {
   return acc += cur.population;
 }, 0);
 console.log(populationTotal);
 
 
-/*
 
-Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
-*/
+//Stretch: If you haven't already, convert your array method callbacks into arrow functions.
